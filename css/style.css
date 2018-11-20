@@ -1,0 +1,33 @@
+html {
+  background-color: #888de0;
+  background-image: url('https://www.4freephotos.com/medium/batch/Small-blurry-lights-trough-tree-tops907.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  margin: 0 auto;
+  width: 400px;
+}
+.main-heading {
+  text-align: center;
+}
+img {
+  width: 100%;
+}
+p, h1 {
+  color: #fff;
+}
+.red {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+.green {
+  color: green;
+}
+.article {
+  color: orange;
+}
+.container h1 p {
+  color:white;
+}
