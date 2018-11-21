@@ -1,33 +1,76 @@
+/*
+  Uzliekam box-sizing visiem elementiem uz border-box
+  lai vieglak saprast elementu platumu
+  https://css-tricks.com/box-sizing/
+*/
 html {
-  background-color: #888de0;
-  background-image: url('https://www.4freephotos.com/medium/batch/Small-blurry-lights-trough-tree-tops907.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  box-sizing: border-box;
 }
-.container {
-  margin: 0 auto;
-  width: 400px;
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
-.main-heading {
-  text-align: center;
+
+/*
+  Nonemam marginus no visiem elementiem kam mums tie nav vajadzigi
+  vai kuriem liksime pasi savus
+*/
+body, p, h1, h2 {
+  margin: 0;
 }
+
+/*
+  Visas bildes aiznem 100% to konteinera platuma
+  lai izvairitos no situacijam kad bilde brauc ara no konteinera
+*/
 img {
   width: 100%;
 }
-p, h1 {
-  color: #fff;
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 10px;
 }
-.red {
-  font-size: 20px;
-  font-weight: bold;
-  color: red;
+
+.header {
+  background-color: #3a3a3a;
+  color: #aaa;
 }
-.green {
-  color: green;
+
+.header .container {
+  padding: 10px 15px;
 }
-.article {
-  color: orange;
+
+.header h1 {
+  font-size: 18px;
 }
-.container h1 p {
-  color:white;
+
+.featured {
+  font-size: 0;
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+
+/*
+  Hacks lai izvairitos no nevelamam atstarpem starp inline-block elementiem.
+  Uzliekam konteinerim kas satur musu tris mazos article blokus, font-size: 0
+  un pec tam katram blokam atseviski uzliekam sakotnejo fonta izmeru izmantojot
+  font-size: initial
+  https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+*/
+.articles {
+  font-size: 0;
+}
+
+.articles > div {
+  display: inline-block;
+  font-size: initial;
+  padding: 0 5px;
+  vertical-align: top;
+  width: 33.33%;
+}
+
+.articles h2 {
+  margin: 10px 0 5px;
 }
